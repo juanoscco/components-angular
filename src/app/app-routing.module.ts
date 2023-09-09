@@ -7,7 +7,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 const routes: Routes = [
   { path: 'button', component: SectionButtonComponent },
   { path: 'input', component: SectionInputComponent },
-  { path: '', redirectTo: '/button', pathMatch: 'full' },
+  { path: '', redirectTo: 'button', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },
 ];
 
