@@ -16,7 +16,7 @@ export class AppComponent {
     {name:'Colors',link:'colors'},
     {name:'Typography', link: 'tipography'},
     {name: 'Spaces', link: 'spaces'},
-    {name: 'Buttons', link: '/button'},
+    {name: 'Buttons', link: 'button'},
     {name:'Inputs', link:'input'},
     {name:'Grid', link: 'grid'},
   ];
