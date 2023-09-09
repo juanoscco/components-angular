@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins/Poppins-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins/Poppins-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url("./assets/fonts/Noto_Sans_JP/NotoSansJP-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("./assets/fonts/Ubuntu_Mono/UbuntuMono-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Variables
+$gray-2: #4f4f4f;
+
+// Mixin para h1
+@mixin heading {
+  color: $gray-2;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+h1 {
+  @include heading;
+}

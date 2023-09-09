@@ -1,0 +1,180 @@
+// Variables para colores y fuentes
+$gray-1: #333;
+$gray-3: #828282;
+$gray-5: #e0e0e0;
+$gray-6: #f2f2f2;
+$primary-color: #2962ff;
+$error-color: #d32f2f;
+$font-family: "Noto Sans JP";
+$font-size-small: 0.65rem;
+$font-size-normal: 0.875rem;
+$font-size-medium: 0.75rem;
+$font-weight-normal: 400;
+$input-border-radius: 0.5rem;
+$input-padding-left: 1rem;
+
+
+// Variables para tamaños de fuente
+$font-size-small: 0.625rem;
+$font-size-medium: 0.75rem;
+$font-size-normal: 0.875rem;
+
+// Mixin para estilos de tamaño
+@mixin size-input($width, $height, $font-size) {
+  input {
+    width: $width;
+    height: $height;
+    font-size: $font-size;
+
+    &::placeholder {
+      font-size: $font-size;
+    }
+  }
+}
+
+// Mixin para estilos de input y textarea
+@mixin input-styles($width, $height, $border-color) {
+  width: $width;
+  height: $height;
+  flex-shrink: 0;
+  border-radius: $input-border-radius;
+  padding-left: $input-padding-left;
+  outline: none;
+
+  border: 1px solid $border-color;
+
+  &:hover {
+    border: 1px solid $gray-1;
+  }
+
+  &:focus {
+    border: 1px solid $primary-color;
+  }
+}
+
+@mixin icon-input($url, $left, $right) {
+  input {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    background-position: $left center;
+    padding-left: $right;
+  }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  label {
+    color: $gray-1;
+    font-family: $font-family;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-normal;
+    line-height: normal;
+  }
+
+  &.default {
+    &.focused {
+      label {
+        color: $primary-color;
+      }
+    }
+
+    p {
+      color: $gray-3;
+      font-family: $font-family;
+      font-size: $font-size-small;
+      font-weight: $font-weight-normal;
+      line-height: normal;
+    }
+
+    input {
+      @include input-styles(12.5rem, 3.5rem, $gray-3);
+    }
+
+    textarea {
+      border-radius: $input-border-radius;
+      padding-left: $input-padding-left;
+      padding-top: 1rem;
+      width: 20rem;
+      resize: none;
+      @include input-styles(20rem, auto, $gray-3);
+    }
+  }
+
+  &.d-error {
+    label,
+    p {
+      color: $error-color;
+    }
+    &.hovered {
+      label,
+      p {
+        color: $gray-1;
+      }
+    }
+    &.focused {
+      label {
+        color: $error-color;
+      }
+    }
+    input {
+      border: 1px solid $error-color;
+      &:focus {
+        border: 1px solid $error-color;
+      }
+    }
+  }
+
+  &.start-icon {
+    @include icon-input(
+      "../../../assets/icons/call_FILL0_wght400_GRAD0_opsz20.svg",
+      5%,
+      2.5rem
+    );
+  }
+
+  &.end-icon {
+    @include icon-input(
+      "../../../assets/icons/lock_FILL0_wght400_GRAD0_opsz20.svg",
+      96%,
+      1rem
+    );
+  }
+
+  &.sm {
+    @include size-input(12.5rem, 2.5rem, $font-size-normal);
+  }
+  &.md {
+    @include size-input(12.5rem, 3.5rem, $font-size-medium);
+  }
+  &.fw {
+    @include size-input(100%, 3.5rem, $font-size-normal);
+  }
+
+  input,
+  textarea {
+    color: $gray-1;
+    font-family: $font-family;
+    font-size: $font-size-normal;
+    font-weight: $font-weight-normal;
+    line-height: normal;
+    outline: none;
+    &::placeholder {
+      color: $gray-3;
+      font-family: $font-family;
+      font-size: $font-size-normal;
+      font-weight: $font-weight-normal;
+      line-height: normal;
+    }
+    &:disabled {
+      border: 1px solid $gray-5;
+      background: $gray-6;
+      &:hover {
+        border: 1px solid $gray-5;
+      }
+    }
+  }
+}

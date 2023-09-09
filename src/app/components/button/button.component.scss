@@ -1,0 +1,177 @@
+$icon-size: 1rem;
+
+@mixin icon($icon-url) {
+  display: inline-block;
+  width: $icon-size;
+  height: $icon-size;
+  background-image: url("#{$icon-url}");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.icon-local_grocery_store {
+  @include icon(
+    "../../../assets/icons/shopping_cart_FILL0_wght400_GRAD0_opsz24.svg"
+  );
+}
+
+.color-button {
+  width: 5.0625rem;
+  height: 2.25rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  font-family: "Noto Sans JP";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 0.375rem;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  &.default {
+    background: #e0e0e0;
+    color: #3f3f3f;
+    &:hover,
+    &:focus {
+      color: #3f3f3f;
+      background: #aeaeae;
+    }
+  }
+
+  &.outline {
+    border-radius: 0.375rem;
+    border: 1px solid #3d5afe;
+    color: #3d5afe;
+    background-color: #fff;
+    &:hover,
+    &:focus {
+      background: rgba(41, 98, 255, 0.1);
+    }
+  }
+
+  &.text {
+    justify-content: flex-start;
+    background-color: #fff;
+    border: 0 solid transparent;
+    color: #3d5afe;
+    &:hover,
+    &:focus {
+      background: rgba(41, 98, 255, 0.1);
+      justify-content: center;
+    }
+    &:disabled {
+      background: #fff;
+      justify-content: flex-start;
+      &:hover{
+        background: #fff;
+      }
+    }
+  }
+
+  &.d-shadow {
+    border-radius: 0.375rem;
+    background: #3d5afe;
+    color: #fff;
+    &:hover,
+    &:focus {
+      border-radius: 0.375rem;
+      background: #3d5afe;
+      color: #fff;
+    }
+  }
+
+  &.btn-icon {
+    width: 6.5rem;
+    background: #3d5afe;
+    color: #fff;
+    gap: 0.5rem;
+    &:hover,
+    &:focus {
+      width: 6.5rem;
+      background: #3d5afe;
+      color: #fff;
+    }
+  }
+
+  &.sn {
+    width: 4.5625rem;
+    height: 2rem;
+    border-radius: 0.375rem;
+    background: #2962ff;
+    box-shadow: 0px 2px 3px 0px rgba(0, 49, 202, 0.2);
+    color: #fff;
+  }
+  &.md {
+    width: 5.0625rem;
+    height: 2.25rem;
+    border-radius: 0.375rem;
+    background: #2962ff;
+    box-shadow: 0px 2px 3px 0px rgba(0, 49, 202, 0.2);
+    color: #fff;
+  }
+  &.lg {
+    width: 5.8125rem;
+    height: 2.625rem;
+    border-radius: 0.375rem;
+    background: #2962ff;
+    box-shadow: 0px 2px 3px 0px rgba(0, 49, 202, 0.2);
+    color: #fff;
+  }
+
+  &.primary {
+    border-radius: 0.375rem;
+    background: #2962ff;
+    box-shadow: 0px 2px 3px 0px rgba(41, 98, 255, 0.2);
+    color: #fff;
+    &:hover,
+    &:focus {
+      border-radius: 0.375rem;
+      background: #0039cb;
+      box-shadow: 0px 2px 3px 0px rgba(41, 98, 255, 0.2);
+      color: #fff;
+    }
+  }
+
+  &.secondary {
+    width: 6.5rem;
+    border-radius: 0.375rem;
+    background: #455a64;
+    box-shadow: 0px 2px 3px 0px rgba(69, 90, 100, 0.2);
+    color: #fff;
+    &:hover,
+    &:focus {
+      border-radius: 0.375rem;
+      background: #1c313a;
+      box-shadow: 0px 2px 3px 0px rgba(69, 90, 100, 0.2);
+      color: #fff;
+    }
+  }
+
+  &.danger {
+    border-radius: 0.375rem;
+    background: #d32f2f;
+    box-shadow: 0px 2px 3px 0px rgba(211, 47, 47, 0.2);
+    color: #fff;
+    &:hover,
+    &:focus {
+      border-radius: 0.375rem;
+      background: #9a0007;
+      box-shadow: 0px 2px 3px 0px rgba(211, 47, 47, 0.2);
+      color: #fff;
+    }
+  }
+
+  &:disabled {
+    border-radius: 0.375rem;
+    background: #e0e0e0;
+    color: #9e9e9e;
+    &:hover {
+      background: #e0e0e0;
+      color: #9e9e9e;
+    }
+  }
+}

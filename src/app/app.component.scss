@@ -1,0 +1,230 @@
+// Variables
+$gray-2: #4f4f4f;
+
+// Variables
+$primary-color: #090f31;
+$accent-color: #f7542e;
+$gray-text: #9e9e9e;
+
+// Mixin para el contenedor principal
+@mixin main-container {
+  // min-width: 100vw;
+  // height: 100vh;
+  display: flex;
+  gap: 5rem;
+}
+
+// Mixin para el aside
+@mixin aside-container {
+  min-width: 12vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-left: 2.5rem;
+  gap: 5rem;
+  background: #fafbfd;
+}
+
+// Mixin para h2
+@mixin heading-2 {
+  color: $primary-color;
+  font-family: "Poppins";
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  span {
+    color: $accent-color;
+    font-family: "Poppins";
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}
+
+// Mixin para li
+@mixin list-item {
+  color: $gray-text;
+  font-family: "Noto Sans JP";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// Mixin para el contenedor .content
+@mixin content-container {
+  width: 80vw;
+  padding-top: 2.5rem;
+}
+
+// Uso de mixins en los selectores
+main {
+  @include main-container;
+}
+
+aside {
+  @include aside-container;
+}
+
+// Uso de mixins en los selectores
+h2 {
+  @include heading-2;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  @include list-item;
+}
+.content {
+  @include content-container;
+}
+.burger {
+  display: none;
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3.4px;
+    margin: 4.7px auto;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background-color: $primary-color;
+  }
+}
+
+.footer {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+  span {
+    color: var(--gray-3, #828282);
+    font-family: Ubuntu Mono;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  p {
+    color: #a9a9a9;
+    text-align: start;
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    a {
+      color: #a9a9a9;
+      font-family: Montserrat;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-decoration-line: underline;
+    }
+  }
+}
+
+// Laptops
+@media screen and (max-width: 1440px) {
+  aside {
+    width: 20vw;
+  }
+}
+
+// tablet
+@media screen and (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 0;
+  }
+  aside {
+    padding-top: 0;
+    padding-left: 1rem;
+    min-height: 7vh;
+    min-width: 100vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  ul {
+    flex-direction: row;
+    padding-right: 2rem;
+  }
+  .content {
+    height: 83vh;
+    padding-left: 1.75rem;
+    padding-top: 1.2rem;
+  }
+}
+// mobile devices (landscape)
+@media screen and (max-width: 768px) {
+  ul {
+    gap: 0.85rem;
+    padding-right: 1.5rem;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+    z-index: 2;
+
+    margin-right: 1.76rem;
+    // position: fixed;
+    // right: 1rem;
+    &.active .bar {
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+  ul.nav-list {
+    background: #fafbfd;
+    position: fixed;
+    top: 0rem;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    gap: 2.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    padding: 1rem;
+    // color: #333;
+    &.active {
+      opacity: 1;
+      left: 0;
+      z-index: 1;
+    }
+  }
+}
+// mobile devices (portrait)
+@media screen and (max-width: 480px) {
+}

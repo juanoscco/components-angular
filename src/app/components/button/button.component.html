@@ -1,0 +1,20 @@
+<button class="color-button" [ngClass]="{
+  'default': variant === 'default',
+  'outline': variant === 'outline',
+  'text': variant === 'text',
+  'd-shadow': disableShadow !== undefined,
+  'btn-icon': startIcon || endIcon,
+  'sm': size === 'sm',
+  'md': size === 'md',
+  'lg': size === 'lg',
+  'primary': color === 'primary',
+  'secondary': color === 'secondary',
+  'danger': color === 'danger'
+}" [disabled]="disabled !== undefined">
+
+<div *ngIf="!startIcon && !endIcon"></div>
+<i *ngIf="startIcon" [ngClass]="startIconClass"></i>
+<ng-content></ng-content>
+<i *ngIf="endIcon" [ngClass]="endIconClass"></i>
+
+</button>

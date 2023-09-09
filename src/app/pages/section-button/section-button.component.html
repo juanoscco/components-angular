@@ -1,0 +1,116 @@
+<h1>Buttons</h1>
+
+<section ngClass="container__variant">
+  <article>
+    <div ngClass="content__btn">
+      <p>app-button</p>
+      <app-button>Default</app-button>
+    </div>
+    <div ngClass="content__btn">
+      <p>app-button variant="outline"</p>
+      <app-button variant="outline">Default</app-button>
+    </div>
+    <div ngClass="content__btn">
+      <p>app-button variant="text"</p>
+      <app-button variant="text">Default</app-button>
+    </div>
+    <div ngClass="content__btn">
+      <p>app-button disableShadow</p>
+      <app-button disableShadow>Default</app-button>
+    </div>
+  </article>
+  <article>
+    <div ngClass="content__btn">
+      <span>&:hover, &:focus</span>
+      <app-button>Default</app-button>
+    </div>
+    <div ngClass="content__btn">
+      <span>&:hover, &:focus</span>
+      <app-button variant="outline">Default</app-button>
+    </div>
+    <div ngClass="content__btn">
+      <span>&:hover, &:focus</span>
+      <app-button variant="text">Default</app-button>
+    </div>
+  </article>
+</section>
+
+<section ngClass="content__variants">
+  <article ngClass="content__btn">
+    <p>app-button disabled</p>
+    <app-button disabled>Disabled</app-button>
+  </article>
+  <article ngClass="content__btn">
+    <p>app-button variant="text" disabled</p>
+    <app-button variant="text" disabled>Disabled</app-button>
+  </article>
+</section>
+
+<section ngClass="content__icons">
+  <article ngClass="content__btn">
+    <p>app-button startIcon="local_grocery_store"</p>
+    <app-button startIcon="local_grocery_store">Default</app-button>
+  </article>
+
+  <article ngClass="content__btn">
+    <p>app-button endIcon="local_grocery_store"</p>
+    <app-button endIcon="local_grocery_store">Default</app-button>
+  </article>
+</section>
+
+<section ngClass="content__variants">
+  <article ngClass="content__btn">
+    <p>app-button size="sm"</p>
+    <app-button color="primary" size="sm">Default</app-button>
+  </article>
+  <article ngClass="content__btn">
+    <p>app-button size="md"</p>
+    <app-button color="primary" size="md">Default</app-button>
+  </article>
+  <article ngClass="content__btn">
+    <p>app-button size="lg"</p>
+    <app-button color="primary" size="lg">Default</app-button>
+  </article>
+</section>
+
+<section class="content__colors">
+  <article>
+    <div ngClass="content__btn">
+      <p> color=”default”</p>
+      <app-button>Default</app-button>
+    </div>
+    <!--  -->
+    <div ngClass="content__btn">
+      <p> color=”primary”</p>
+      <app-button color="primary">Default</app-button>
+    </div>
+    <!--  -->
+    <div ngClass="content__btn">
+      <p> color=”secondary”</p>
+      <app-button color="secondary">Secondary</app-button>
+    </div>
+    <!--  -->
+    <div ngClass="content__btn">
+      <p>color=”danger”</p>
+      <app-button color="danger">Danger</app-button>
+    </div>
+  </article>
+  <article>
+    <div ngClass="content__btn">
+      <span> &:hover, &:focus</span>
+      <app-button>Default</app-button>
+    </div>
+    <!--  -->
+    <div ngClass="content__btn">
+      <app-button color="primary">Default</app-button>
+    </div>
+    <!--  -->
+    <div ngClass="content__btn">
+      <app-button color="secondary">Secondary</app-button>
+    </div>
+    <!--  -->
+    <div ngClass="content__btn">
+      <app-button color="danger">Danger</app-button>
+    </div>
+  </article>
+</section>

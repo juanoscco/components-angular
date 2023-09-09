@@ -1,0 +1,28 @@
+<div class="input-container" [ngClass]="{
+  'default': variant === 'default',
+  'd-error': error !== undefined,
+  'start-icon': startIcon !== undefined,
+  'end-icon': endIcon !== undefined,
+  'sm': size === 'sm',
+  'md': size === 'md',
+  'fw': fullWidth !== undefined,
+  'focused': isInputFocused,
+  'hovered': isInputHovered
+}">
+  <label for="input">Label</label>
+  <div *ngIf="!multiline; else textareaBlock">
+    <input type="text" placeholder="Placeholder" (focus)="isInputFocused = true" (blur)="isInputFocused = false"
+      (mouseenter)="isInputHovered = true" (mouseleave)="isInputHovered = false" [disabled]="disabled !== undefined"
+      [value]="value" />
+  </div>
+  <ng-template #textareaBlock>
+    <textarea id="textarea" placeholder="Placeholder" (focus)="isInputFocused = true" (blur)="isInputFocused = false"
+      (mouseenter)="isInputHovered = true" (mouseleave)="isInputHovered = false" [disabled]="disabled !== undefined"
+      [value]="value" [rows]="rows"></textarea>
+  </ng-template>
+
+  <div *ngIf="!helperText"></div>
+  <p *ngIf="helperText" [ngClass]="{'hovered': isInputHovered}">{{ helperText }}</p>
+</div>
+
+<!--  Aplica 'hovered' solo si no está deshabilitado -->

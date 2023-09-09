@@ -1,0 +1,66 @@
+// Variables para tamaños de contenedor
+$container-width-default: 45rem;
+$container-width-small: 40rem;
+$container-width-sm: 33.8rem;
+
+$size-responsive: 100%;
+$wrap-responsive: wrap;
+
+// Responsive
+@mixin container-responsive($size, $wrap) {
+  width: $size;
+  flex-wrap: $wrap;
+}
+
+// Mixin para estilos de contenedor
+@mixin container-styles($width, $margin-top) {
+  display: flex;
+  width: $width;
+  justify-content: space-between;
+  margin-top: $margin-top;
+}
+
+// Mixin para estilos de columna
+@mixin column-styles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  span {
+    color: var(--Gray-1, #333);
+    font-family: Ubuntu Mono;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+.default-content {
+  @include container-styles($container-width-default, 1rem);
+}
+.default-small {
+  @include container-styles($container-width-small, 1rem);
+}
+.default-sm {
+  @include container-styles($container-width-sm, 1rem);
+}
+.default-colum {
+  @include column-styles;
+}
+
+@media screen and (max-width: 770px) {
+  .default-content {
+    @include container-responsive($size-responsive, $wrap-responsive);
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .default-small {
+    @include container-responsive($size-responsive, $wrap-responsive);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .default-sm {
+    @include container-responsive($size-responsive, $wrap-responsive)
+  }
+}

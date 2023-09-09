@@ -1,0 +1,18 @@
+$gray-2: #4f4f4f;
+
+
+.wrapper__not_fount {
+  height: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: $gray-2;
+    font-family: Poppins;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
